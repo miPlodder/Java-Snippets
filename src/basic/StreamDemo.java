@@ -51,5 +51,18 @@ public class StreamDemo {
 
         // limit(n) - return first n elements of original stream
         System.out.println(al.stream().limit(1).collect(Collectors.toList()));
+
+        // min() - gives minimum value in the stream
+        System.out.println(al.stream().min((i, j) -> i.salary - j.salary).get().name);
+
+        // max() - gives maximum value in the stream
+        System.out.println(al.stream().max((i, j) -> i.salary - j.salary).get().name);
+
+        // count() - returns the number of elements in the stream
+        System.out.println(al.stream().filter(i -> i.salary > 9000).count());
+
+        // reduce() - reduce the elements of a stream to a single value
+        // it compares variable which satisfies the previous condition with current variable
+        System.out.println(al.stream().reduce((emp1, emp2) -> e1.salary > e2.salary ? e1 : e2).get());
     }
 }
